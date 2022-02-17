@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_controler"
+    app:startDestination="@id/home_screen">
+
+    <fragment
+        android:id="@+id/home_screen"
+        android:name="com.example.banksystem.ui.homeScreen.home_screen"
+        android:label="home_screen_fragment"
+        tools:layout="@layout/home_screen_fragment" >
+        <action
+            android:id="@+id/action_home_screen_to_allUser"
+            app:destination="@id/allUser" />
+        <action
+            android:id="@+id/action_home_screen_to_transfer_balance"
+            app:destination="@id/transfer_balance" />
+    </fragment>
+    <fragment
+        android:id="@+id/allUser"
+        android:name="com.example.banksystem.ui.allUser.AllUser"
+        android:label="all_user_fragment"
+        tools:layout="@layout/all_user_fragment" >
+        <action
+            android:id="@+id/action_allUser_to_one_customer"
+            app:destination="@id/one_customer" />
+    </fragment>
+    <fragment
+        android:id="@+id/one_customer"
+        android:name="com.example.banksystem.ui.oneCustomer.one_customer"
+        android:label="one_customer_fragment"
+        tools:layout="@layout/one_customer_fragment" >
+        <argument
+            android:name="name"
+            app:argType="string"
+            android:defaultValue="name castomer" />
+        <argument
+            android:name="email"
+            app:argType="string"
+            android:defaultValue="nameCustomer@bank.system.com" />
+        <action
+            android:id="@+id/action_one_customer_to_transfer_balance"
+            app:destination="@id/transfer_balance" />
+        <argument
+            android:name="balance"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_one_customer_to_allUser"
+            app:destination="@id/allUser" />
+    </fragment>
+    <fragment
+        android:id="@+id/transfer_balance"
+        android:name="com.example.banksystem.ui.transferBalance.transfer_balance"
+        android:label="transfer_balance_fragment"
+        tools:layout="@layout/transfer_balance_fragment" />
+</navigation>

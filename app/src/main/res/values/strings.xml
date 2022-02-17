@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">bankSystem</string>
+    <string name="label">please enter the amount to transfer</string>
+    <string name="hint_spiner">"pleas slect the user whom the amount is transferred"</string>
+    <string name="tv_user_information">" User Information"</string>
+    <string name="sender">Sender</string>
+    <string name="receiver">Receiver</string>
+    <string name="amount_transferred">Amount Transferred</string>
+</resources>
